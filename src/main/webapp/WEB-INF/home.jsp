@@ -17,13 +17,13 @@
                     <div class="wrap">
                         <div class="main">
                             <strong class="subject">
-                                <a href="/v1/qna/show?questionId=${question.questionId}">${question.title}</a>
+                                <a href="/qna/show?questionId=${question.questionId}">${question.title}</a>
                             </strong>
 
                             <div class="auth-info">
                                 <i class="icon-add-comment"></i>
                                 <span class="time">${question.createdDate}</span>
-                                <a href="/v1/user/profile.html" class="author">${question.writer}</a>
+                                <a href="/user/profile.html" class="author">${question.writer}</a>
                             </div>
 
                             <div class="reply" title="댓글">
@@ -64,13 +64,13 @@
             </div>
 
             <div class="col-md-2 qna-write">
-                <a href="/v1/qna/form" class="btn btn-primary pull-right" role="button">질문하기</a>
+                <a href="/qna/form" class="btn btn-primary pull-right" role="button">질문하기</a>
             </div>
         </div>
     </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../js/v1/scriptsV1.js"></script>
+<script src="../js/scripts.js"></script>
 </body>
 </html>
