@@ -3,14 +3,14 @@
 
 <!doctype html>
 <html lang="ko">
-<%@ include file="/include/v1/headerV1.jspf" %>
+<%@ include file="/include/header.jspf" %>
 <body>
-<%@ include file="/include/v1/navigationV1.jspf" %>
+<%@ include file="/include/navigation.jspf" %>
 
 <div class="container" id="main">
     <main class="form-signin">
 
-        <form name="update" method="post" action="/v1/user/update">
+        <form name="update" method="post" action="/user/update">
             <div class="form-floating">
                 <input type="text" class="form-control" value="${user.userId}" id="userId" name="userId"
                        placeholder="Id" readonly>
@@ -43,6 +43,6 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../../js/v1/scriptsV1.js"></script>
+<script src="../../js/scripts.js"></script>
 </body>
 </html>

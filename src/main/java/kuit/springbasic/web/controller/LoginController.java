@@ -2,6 +2,7 @@ package kuit.springbasic.web.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
+import kuit.springbasic.core.util.UserSessionUtils;
 import kuit.springbasic.web.dao.UserDao;
 import kuit.springbasic.web.domain.User;
 import lombok.RequiredArgsConstructor;
@@ -29,7 +30,7 @@ public class LoginController {
 
         if (user != null && user.equals(loggedInUser)) {
             HttpSession session = request.getSession();
-            session.setAttribute("user", user);
+            session.setAttribute(UserSessionUtils.USER_SESSION_KEY, user);
             return "redirect:/";
         }
         return "redirect:/user/loginFailed";
@@ -45,7 +46,7 @@ public class LoginController {
 
         if (user != null && user.equals(loggedInUser)) {
             HttpSession session = request.getSession();
-            session.setAttribute("user", user);
+            session.setAttribute(UserSessionUtils.USER_SESSION_KEY, user);
             return "redirect:/";
         }
         return "redirect:/user/loginFailed";
@@ -61,7 +62,7 @@ public class LoginController {
 
         if (user != null && user.equals(loggedInUser)) {
             HttpSession session = request.getSession();
-            session.setAttribute("user", user);
+            session.setAttribute(UserSessionUtils.USER_SESSION_KEY, user);
             return "redirect:/";
         }
         return "redirect:/user/loginFailed";

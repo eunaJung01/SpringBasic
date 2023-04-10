@@ -3,9 +3,9 @@
 
 <!doctype html>
 <html lang="ko">
-<%@ include file="/include/v1/headerV1.jspf" %>
+<%@ include file="/include/header.jspf" %>
 <body>
-<%@ include file="/include/v1/navigationV1.jspf" %>
+<%@ include file="/include/navigation.jspf" %>
 
 <div class="container" id="main">
     <table class="table table-striped">
@@ -15,7 +15,6 @@
             <th class="col-md-3">이름</th>
             <th class="col-md-3">이메일</th>
             <th class="col-md-3">#</th>
-
         </tr>
         </thead>
         <tbody>
@@ -28,7 +27,7 @@
                 </th>
                 <th class="col-md-3">${user.email}
                 </th>
-                <th class="col-md-3"><a href="/v1/user/updateForm?userId=${user.userId}" class="btn btn-success"
+                <th class="col-md-3"><a href="/user/updateForm?userId=${user.userId}" class="btn btn-success"
                                         role="button">수정</a></th>
             </tr>
         </c:forEach>
@@ -37,6 +36,6 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../../js/v1/scriptsV1.js"></script>
+<script src="../../js/scripts.js"></script>
 </body>
 </html>
