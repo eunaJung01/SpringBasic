@@ -10,19 +10,19 @@ public class ForwardController {
 
     @RequestMapping("/user/form")
     public String forwardToUserForm() {
-        log.info("ForwardController");
+        log.info("ForwardController.forwardToUserForm");
         return "/user/form";
     }
 
     @RequestMapping("/user/loginForm")
     public String forwardToUserLoginForm() {
-        log.info("ForwardController");
+        log.info("ForwardController.forwardToUserLoginForm");
         return "/user/login";
     }
 
     @RequestMapping("/user/loginFailed")
     public String forwardToUserLoginFailed() {
-        log.info("ForwardController");
+        log.info("ForwardController.forwardToUserLoginFailed");
         return "/user/loginFailed";
     }
 
