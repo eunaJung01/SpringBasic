@@ -3,9 +3,9 @@
 
 <!doctype html>
 <html lang="ko">
-<%@ include file="/include/v1/headerV1.jspf" %>
+<%@ include file="/include/header.jspf" %>
 <body>
-<%@ include file="/include/v1/navigationV1.jspf" %>
+<%@ include file="/include/navigation.jspf" %>
 
 <div class="container" id="main">
     <header class="qna-header">
@@ -37,11 +37,11 @@
                     <c:if test="${not empty sessionScope.user}">
                         <li>
                             <a class="link-modify-article"
-                               href="/v1/qna/updateForm?questionId=${question.questionId}">수정</a>
+                               href="/qna/updateForm?questionId=${question.questionId}">수정</a>
                         </li>
                     </c:if>
                     <li>
-                        <a class="link-modify-article" href="/v1/qna/delete?questionId=${question.questionId}">삭제</a>
+                        <a class="link-modify-article" href="/qna/delete?questionId=${question.questionId}">삭제</a>
                     </li>
                     <li>
                         <a class="link-modify-article" href="/">목록</a>
@@ -77,7 +77,7 @@
                                 <ul class="article-util-list">
                                     <li>
                                         <a class="link-modify-article"
-                                           href="/v1/api/qna/updateAnswer?answerId=${each.answerId}">수정</a>
+                                           href="/api/qna/updateAnswer?answerId=${each.answerId}">수정</a>
                                     </li>
                                     <li>
                                         <form class="form-delete" action="/v1/api/qna/deleteAnswer" method="POST">
@@ -129,10 +129,10 @@
         <div class="article-util">
             <ul class="article-util-list">
                 <li>
-                    <a class="link-modify-article" href="/v1/api/qna/updateAnswer/{3}">수정</a>
+                    <a class="link-modify-article" href="/api/qna/updateAnswer/{3}">수정</a>
                 </li>
                 <li>
-                    <form class="form-delete" action="/v1/api/qna/deleteAnswer" method="POST">
+                    <form class="form-delete" action="/api/qna/deleteAnswer" method="POST">
                         <input type="hidden" name="answerId" value="{4}"/>
                         <button type="submit" class="link-delete-article">삭제</button>
                     </form>
@@ -144,6 +144,6 @@
 
 <script src="/js/jquery-2.2.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../../js/v1/scriptsV1.js"></script>
+<script src="../../js/scripts.js"></script>
 </body>
 </html>

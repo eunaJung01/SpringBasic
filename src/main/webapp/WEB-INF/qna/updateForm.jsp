@@ -5,16 +5,16 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
-    <%@ include file="/include/v1/headerV1.jspf" %>
+    <%@ include file="/include/header.jspf" %>
 </head>
 <body>
-<%@ include file="/include/v1/navigationV1.jspf" %>
+<%@ include file="/include/navigation.jspf" %>
 
 <div class="container" id="main">
     <div class="col-md-12 col-sm-12 col-lg-10 col-lg-offset-1">
         <div class="panel panel-default content-main">
 
-            <form name="question" method="post" action="/v1/qna/update">
+            <form name="question" method="post" action="/qna/update">
 
                 <input type="hidden" name="questionId" value="${question.questionId}"/>
 
@@ -44,6 +44,6 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../../js/v1/scriptsV1.js"></script>
+<script src="../../js/scripts.js"></script>
 </body>
 </html>

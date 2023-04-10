@@ -59,7 +59,7 @@ public class UserController {
         return "redirect:/";
     }
 
-    @RequestMapping("update")
+    @RequestMapping("/update")
     public String updateUser(@RequestParam String userId,
                              @RequestParam String password,
                              @RequestParam String name,
