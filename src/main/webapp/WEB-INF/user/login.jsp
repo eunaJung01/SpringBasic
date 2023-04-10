@@ -3,12 +3,13 @@
 
 <!doctype html>
 <html lang="ko">
-<%@ include file="/include/v1/headerV1.jspf" %>
+<%@ include file="/include/header.jspf" %>
 <body>
-<%@ include file="/include/v1/navigationV1.jspf" %>
+<%@ include file="/include/navigation.jspf" %>
+
 <div class="container">
     <main class="form-signin">
-        <form name="login" method="post" action="/v1/user/login">
+        <form name="login" method="post" action="/user/login">
             <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
             <div class="form-floating">
@@ -24,7 +25,8 @@
         </form>
     </main>
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../../js/v1/scriptsV1.js"></script>
+<script src="../../js/scripts.js"></script>
 </body>
 </html>
