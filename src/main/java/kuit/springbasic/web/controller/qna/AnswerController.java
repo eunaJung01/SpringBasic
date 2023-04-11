@@ -33,7 +33,7 @@ public class AnswerController {
      * addAnswerV3 : @ModelAttribute, @ResponseBody
      */
     //    @RequestMapping(value = "/api/qna/addAnswer", method = RequestMethod.POST)
-    @PostMapping("/api/qna/addAnswer")
+    //    @PostMapping("/api/qna/addAnswer")
     public void addAnswerV0(@RequestParam int questionId, @RequestParam String writer, @RequestParam String contents,
                             HttpServletResponse response) throws SQLException, IOException {
         log.info("AnswerController.addAnswerV0");
