@@ -1,14 +1,14 @@
 package kuit.springbasic.web.domain;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.ToString;
+import lombok.*;
 
 import java.sql.Date;
 import java.time.LocalDate;
 
 @Getter
+@Setter
 @ToString
+@NoArgsConstructor
 @EqualsAndHashCode
 public class Answer {
 
@@ -20,7 +20,7 @@ public class Answer {
 
     private String contents;
 
-    private Date createdDate;
+    private Date createdDate = Date.valueOf(LocalDate.now());
 
     public Answer(int answerId, int questionId, String writer, String contents, Date createdDate) {
         this.answerId = answerId;
