@@ -23,6 +23,11 @@ public class UserController {
 
     private final UserDao userDao;
 
+    /**
+     * TODO: createUser
+     * createUserV1 : @RequestParam
+     * createUserV2 : @ModelAttribute
+     */
     //    @RequestMapping("/signup")
     public String createUserV1(@RequestParam String userId,
                                @RequestParam String password,
@@ -43,6 +48,9 @@ public class UserController {
         return "redirect:/user/list";
     }
 
+    /**
+     * TODO: showUserList
+     */
     @RequestMapping("/list")
     public String showUserList(HttpServletRequest request, Model model) {
         log.info("UserController.showUserList");
@@ -55,6 +63,9 @@ public class UserController {
         return "redirect:/user/loginForm";
     }
 
+    /**
+     * TODO: showUserUpdateForm
+     */
     @RequestMapping("/updateForm")
     public String showUserUpdateForm(@RequestParam String userId, Model model) throws SQLException {
         log.info("UserController.showUserUpdateForm");
@@ -67,6 +78,11 @@ public class UserController {
         return "redirect:/";
     }
 
+    /**
+     * TODO: updateUser
+     * updateUserV1 : @RequestParam
+     * updateUserV2 : @ModelAttribute
+     */
     //    @RequestMapping("/update")
     public String updateUserV1(@RequestParam String userId,
                                @RequestParam String password,

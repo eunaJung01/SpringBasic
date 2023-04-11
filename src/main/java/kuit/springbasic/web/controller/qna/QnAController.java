@@ -26,6 +26,9 @@ public class QnAController {
     private final QuestionDao questionDao;
     private final AnswerDao answerDao;
 
+    /**
+     * TODO: showQnA
+     */
     @RequestMapping("/show")
     public String showQnA(@RequestParam int questionId, Model model) throws SQLException {
         log.info("QuestionController.showQnA");

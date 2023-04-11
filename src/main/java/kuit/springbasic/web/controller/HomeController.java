@@ -7,9 +7,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import kuit.springbasic.web.dao.QuestionDao;
 
@@ -22,8 +20,14 @@ public class HomeController {
 
     private final QuestionDao questionDao;
 
+    /**
+     * TODO: showHome
+     * showHomeV0 : parameter - HttpServletRequest, HttpServletResponse / return - ModelAndView
+     * showHomeV1 : parameter - none / return - ModelAndView
+     * showHomeV2 : parameter - Model / return - String
+     */
     @RequestMapping("/homeV0")
-    public ModelAndView homeV0(HttpServletRequest request, HttpServletResponse response) {
+    public ModelAndView showHomeV0(HttpServletRequest request, HttpServletResponse response) {
         log.info("HomeController.homeV0");
 
         ModelAndView modelAndView = new ModelAndView("home");
@@ -36,7 +40,7 @@ public class HomeController {
     }
 
     @RequestMapping("/homeV1")
-    public ModelAndView homeV1() {
+    public ModelAndView showHomeV1() {
         log.info("HomeController.homeV1");
 
         ModelAndView modelAndView = new ModelAndView("home");
@@ -47,9 +51,8 @@ public class HomeController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-//    @GetMapping("/")
-    public String homeV2(Model model) {
+    @RequestMapping("/")
+    public String showHomeV2(Model model) {
         log.info("HomeController.homeV2");
 
         List<Question> questions = questionDao.findAll();

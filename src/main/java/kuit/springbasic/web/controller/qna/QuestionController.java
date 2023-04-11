@@ -26,6 +26,9 @@ public class QuestionController {
 
     private final QuestionDao questionDao;
 
+    /**
+     * TODO: showQuestionForm
+     */
     @RequestMapping("/form")
     public String showQuestionForm(HttpServletRequest request) {
         log.info("QuestionController.showQuestionForm");
@@ -37,6 +40,11 @@ public class QuestionController {
         return "redirect:/user/loginForm";
     }
 
+    /**
+     * TODO: createQuestion
+     * createQuestionV1 : @RequestParam
+     * createQuestionV2 : @ModelAttribute
+     */
     //    @RequestMapping("/create")
     public String createQuestionV1(@RequestParam String writer, @RequestParam String title, @RequestParam String contents) throws SQLException {
         log.info("QuestionController.createQuestionV1");
@@ -54,6 +62,11 @@ public class QuestionController {
         return "redirect:/";
     }
 
+    /**
+     * TODO: showUpdateQuestionForm
+     * showUpdateQuestionFormV1 : @RequestParam, HttpServletRequest, Model
+     * showUpdateQuestionFormV2 : @RequestParam, @SessionAttribute, Model
+     */
     //    @RequestMapping("/updateForm")
     public String showUpdateQuestionFormV1(@RequestParam int questionId,
                                            HttpServletRequest request, Model model) throws SQLException {
@@ -93,6 +106,9 @@ public class QuestionController {
         return "/qna/updateForm";
     }
 
+    /**
+     * TODO: updateQuestion
+     */
     @RequestMapping("/update")
     public String updateQuestion(@RequestParam int questionId, @RequestParam String title, @RequestParam String contents,
                                  @SessionAttribute(name = UserSessionUtils.USER_SESSION_KEY, required = false) User userFromSession) throws SQLException {

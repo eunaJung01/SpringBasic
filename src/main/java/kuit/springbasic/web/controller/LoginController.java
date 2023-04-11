@@ -21,6 +21,13 @@ public class LoginController {
 
     private final UserDao userDao;
 
+    /**
+     * TODO: login
+     * loginV1 : @RequestParam("")
+     * loginV2 : @RequestParam
+     * loginV3 : @RequestParam 생략(비추천)
+     * loginV4 : @ModelAttribute
+     */
     //    @RequestMapping("/user/login")
     public String loginV1(@RequestParam("userId") String userId, @RequestParam("password") String password,
                           HttpServletRequest request) throws SQLException {
@@ -72,7 +79,7 @@ public class LoginController {
     @RequestMapping("/user/login")
     public String loginV4(@ModelAttribute User loggedInUser,
                           HttpServletRequest request) throws SQLException {
-        log.info("LoginController.loginV2");
+        log.info("LoginController.loginV4");
 
         User user = userDao.findByUserId(loggedInUser.getUserId());
 
@@ -84,6 +91,9 @@ public class LoginController {
         return "redirect:/user/loginFailed";
     }
 
+    /**
+     * TODO: logout
+     */
     @RequestMapping("/user/logout")
     public String logout(HttpServletRequest request) {
         log.info("LoginController.logout");
