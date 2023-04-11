@@ -10,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttribute;
@@ -36,13 +37,20 @@ public class QuestionController {
         return "redirect:/user/loginForm";
     }
 
-    @RequestMapping("/create")
-    public String createQuestion(@RequestParam String writer, @RequestParam String title, @RequestParam String contents) throws SQLException {
-        log.info("QuestionController.createQuestion");
+    //    @RequestMapping("/create")
+    public String createQuestionV1(@RequestParam String writer, @RequestParam String title, @RequestParam String contents) throws SQLException {
+        log.info("QuestionController.createQuestionV1");
 
         Question question = new Question(writer, title, contents, 0);
         questionDao.insert(question);
 
+        return "redirect:/";
+    }
+
+    @RequestMapping("/create")
+    public String createQuestionV2(@ModelAttribute Question question) throws SQLException {
+        log.info("QuestionController.createQuestionV2");
+        questionDao.insert(question);
         return "redirect:/";
     }
 

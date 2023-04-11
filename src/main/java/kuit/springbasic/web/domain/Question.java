@@ -2,11 +2,15 @@ package kuit.springbasic.web.domain;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.sql.Date;
 import java.time.LocalDate;
 
 @Getter
+@Setter
+@NoArgsConstructor
 @EqualsAndHashCode(exclude = {"questionId"})
 public class Question {
 
@@ -18,9 +22,9 @@ public class Question {
 
     private String contents;
 
-    private Date createdDate;
+    private Date createdDate = Date.valueOf(LocalDate.now());
 
-    private int countOfAnswer;
+    private int countOfAnswer = 0;
 
     public Question(int questionId, String writer, String title, String contents, Date createdDate, int countOfAnswer) {
         this.questionId = questionId;
