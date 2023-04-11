@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -22,16 +23,23 @@ public class UserController {
 
     private final UserDao userDao;
 
-    @RequestMapping("/signup")
-    public String createUser(@RequestParam String userId,
-                             @RequestParam String password,
-                             @RequestParam String name,
-                             @RequestParam String email) {
-        log.info("UserController.createUser");
+    //    @RequestMapping("/signup")
+    public String createUserV1(@RequestParam String userId,
+                               @RequestParam String password,
+                               @RequestParam String name,
+                               @RequestParam String email) {
+        log.info("UserController.createUserV1");
 
         User user = new User(userId, password, name, email);
         userDao.insert(user);
 
+        return "redirect:/user/list";
+    }
+
+    @RequestMapping("/signup")
+    public String createUserV2(@ModelAttribute User user) {
+        log.info("UserController.createUserV2");
+        userDao.insert(user);
         return "redirect:/user/list";
     }
 
@@ -59,16 +67,23 @@ public class UserController {
         return "redirect:/";
     }
 
-    @RequestMapping("/update")
-    public String updateUser(@RequestParam String userId,
-                             @RequestParam String password,
-                             @RequestParam String name,
-                             @RequestParam String email) {
-        log.info("UserController.updateUser");
+    //    @RequestMapping("/update")
+    public String updateUserV1(@RequestParam String userId,
+                               @RequestParam String password,
+                               @RequestParam String name,
+                               @RequestParam String email) {
+        log.info("UserController.updateUserV1");
 
         User user = new User(userId, password, name, email);
         userDao.update(user);
 
+        return "redirect:/user/list";
+    }
+
+    @RequestMapping("/update")
+    public String updateUserV2(@ModelAttribute User user) {
+        log.info("UserController.updateUserV2");
+        userDao.update(user);
         return "redirect:/user/list";
     }
 
