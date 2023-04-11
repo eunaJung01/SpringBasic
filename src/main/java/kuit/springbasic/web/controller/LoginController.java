@@ -8,6 +8,7 @@ import kuit.springbasic.web.domain.User;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -36,7 +37,7 @@ public class LoginController {
         return "redirect:/user/loginFailed";
     }
 
-    @RequestMapping("/user/login")
+    //    @RequestMapping("/user/login")
     public String loginV2(@RequestParam String userId, @RequestParam String password,
                           HttpServletRequest request) throws SQLException {
         log.info("LoginController.loginV2");
@@ -59,6 +60,21 @@ public class LoginController {
 
         User loggedInUser = new User(userId, password);
         User user = userDao.findByUserId(userId);
+
+        if (user != null && user.equals(loggedInUser)) {
+            HttpSession session = request.getSession();
+            session.setAttribute(UserSessionUtils.USER_SESSION_KEY, user);
+            return "redirect:/";
+        }
+        return "redirect:/user/loginFailed";
+    }
+
+    @RequestMapping("/user/login")
+    public String loginV4(@ModelAttribute User loggedInUser,
+                          HttpServletRequest request) throws SQLException {
+        log.info("LoginController.loginV2");
+
+        User user = userDao.findByUserId(loggedInUser.getUserId());
 
         if (user != null && user.equals(loggedInUser)) {
             HttpSession session = request.getSession();
