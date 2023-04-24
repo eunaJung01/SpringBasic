@@ -1,7 +1,7 @@
 package kuit.springbasic.web.dao;
 
-import kuit.springbasic.core.jdbc.JdbcTemplate;
-import kuit.springbasic.core.jdbc.KeyHolder;
+import kuit.springbasic.jdbc.JdbcTemplate;
+import kuit.springbasic.jdbc.KeyHolder;
 import kuit.springbasic.web.domain.Question;
 import org.springframework.stereotype.Repository;
 

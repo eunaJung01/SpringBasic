@@ -1,4 +1,4 @@
-package kuit.springbasic.core.jdbc.connection;
+package kuit.springbasic.jdbc.connection;
 
 import org.apache.commons.dbcp2.BasicDataSource;
 

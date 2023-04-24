@@ -1,4 +1,4 @@
-package kuit.springbasic.core.jdbc;
+package kuit.springbasic.jdbc;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

@@ -1,6 +1,6 @@
 package kuit.springbasic.web.dao;
 
-import kuit.springbasic.core.jdbc.JdbcTemplate;
+import kuit.springbasic.jdbc.JdbcTemplate;
 import kuit.springbasic.web.domain.User;
 import org.springframework.stereotype.Repository;
 

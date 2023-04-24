@@ -1,6 +1,6 @@
-package kuit.springbasic.core.jdbc;
+package kuit.springbasic.jdbc;
 
-import kuit.springbasic.core.jdbc.connection.ConnectionManager;
+import kuit.springbasic.jdbc.connection.ConnectionManager;
 
 import java.sql.*;
 import java.util.ArrayList;
