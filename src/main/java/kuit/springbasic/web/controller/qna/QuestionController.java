@@ -2,7 +2,7 @@ package kuit.springbasic.web.controller.qna;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
-import kuit.springbasic.core.util.UserSessionUtils;
+import kuit.springbasic.web.util.UserSessionUtils;
 import kuit.springbasic.web.dao.QuestionDao;
 import kuit.springbasic.web.domain.Question;
 import kuit.springbasic.web.domain.User;

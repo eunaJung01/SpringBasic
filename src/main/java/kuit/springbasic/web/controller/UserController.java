@@ -2,7 +2,7 @@ package kuit.springbasic.web.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
-import kuit.springbasic.core.util.UserSessionUtils;
+import kuit.springbasic.web.util.UserSessionUtils;
 import kuit.springbasic.web.dao.UserDao;
 import kuit.springbasic.web.domain.User;
 import lombok.RequiredArgsConstructor;
