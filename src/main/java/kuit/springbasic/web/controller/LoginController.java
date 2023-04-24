@@ -2,7 +2,6 @@ package kuit.springbasic.web.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
-import kuit.springbasic.core.util.UserSessionUtils;
 import kuit.springbasic.web.dao.UserDao;
 import kuit.springbasic.web.domain.User;
 import lombok.RequiredArgsConstructor;
@@ -13,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.sql.SQLException;
+
+import static kuit.springbasic.config.Constant.USER_SESSION_KEY;
 
 @Slf4j
 @Controller
@@ -38,7 +39,7 @@ public class LoginController {
 
         if (user != null && user.equals(loggedInUser)) {
             HttpSession session = request.getSession();
-            session.setAttribute(UserSessionUtils.USER_SESSION_KEY, user);
+            session.setAttribute(USER_SESSION_KEY, user);
             return "redirect:/";
         }
         return "redirect:/user/loginFailed";
@@ -54,7 +55,7 @@ public class LoginController {
 
         if (user != null && user.equals(loggedInUser)) {
             HttpSession session = request.getSession();
-            session.setAttribute(UserSessionUtils.USER_SESSION_KEY, user);
+            session.setAttribute(USER_SESSION_KEY, user);
             return "redirect:/";
         }
         return "redirect:/user/loginFailed";
@@ -70,7 +71,7 @@ public class LoginController {
 
         if (user != null && user.equals(loggedInUser)) {
             HttpSession session = request.getSession();
-            session.setAttribute(UserSessionUtils.USER_SESSION_KEY, user);
+            session.setAttribute(USER_SESSION_KEY, user);
             return "redirect:/";
         }
         return "redirect:/user/loginFailed";
@@ -85,7 +86,7 @@ public class LoginController {
 
         if (user != null && user.equals(loggedInUser)) {
             HttpSession session = request.getSession();
-            session.setAttribute(UserSessionUtils.USER_SESSION_KEY, user);
+            session.setAttribute(USER_SESSION_KEY, user);
             return "redirect:/";
         }
         return "redirect:/user/loginFailed";

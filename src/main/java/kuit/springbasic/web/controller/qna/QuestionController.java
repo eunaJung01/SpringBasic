@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 import java.sql.SQLException;
 import java.util.Objects;
 
+import static kuit.springbasic.config.Constant.USER_SESSION_KEY;
+
 @Slf4j
 @Controller
 @RequiredArgsConstructor
@@ -89,7 +91,7 @@ public class QuestionController {
 
     @RequestMapping("/updateForm")
     public String showUpdateQuestionFormV2(@RequestParam int questionId,
-                                           @SessionAttribute(name = UserSessionUtils.USER_SESSION_KEY, required = false) User userFromSession,
+                                           @SessionAttribute(name = USER_SESSION_KEY, required = false) User userFromSession,
                                            Model model) throws SQLException {
         log.info("QuestionController.showUpdateQuestionFormV2");
 
@@ -111,7 +113,7 @@ public class QuestionController {
      */
     @RequestMapping("/update")
     public String updateQuestion(@RequestParam int questionId, @RequestParam String title, @RequestParam String contents,
-                                 @SessionAttribute(name = UserSessionUtils.USER_SESSION_KEY, required = false) User userFromSession) throws SQLException {
+                                 @SessionAttribute(name = USER_SESSION_KEY, required = false) User userFromSession) throws SQLException {
         log.info("QuestionController.updateQuestion");
 
         if (userFromSession == null) {

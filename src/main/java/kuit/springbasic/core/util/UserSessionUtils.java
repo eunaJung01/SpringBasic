@@ -3,9 +3,9 @@ package kuit.springbasic.core.util;
 import jakarta.servlet.http.HttpSession;
 import kuit.springbasic.web.domain.User;
 
-public class UserSessionUtils {
+import static kuit.springbasic.config.Constant.USER_SESSION_KEY;
 
-    public static final String USER_SESSION_KEY = "user";
+public class UserSessionUtils {
 
     public static User getUserFromSession(HttpSession session) {
         Object user = session.getAttribute(USER_SESSION_KEY);
