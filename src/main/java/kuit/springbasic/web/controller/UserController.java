@@ -24,6 +24,15 @@ public class UserController {
     private final UserDao userDao;
 
     /**
+     * TODO: showUserForm
+     */
+    @RequestMapping("/user/form")
+    public String showUserForm() {
+        log.info("UserController.showUserForm");
+        return "/user/form";
+    }
+
+    /**
      * TODO: createUser
      * createUserV1 : @RequestParam
      * createUserV2 : @ModelAttribute

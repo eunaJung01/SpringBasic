@@ -23,6 +23,24 @@ public class LoginController {
     private final UserDao userDao;
 
     /**
+     * TODO: showLoginForm
+     */
+    @RequestMapping("/user/loginForm")
+    public String showLoginForm() {
+        log.info("HomeController.showLoginForm");
+        return "/user/login";
+    }
+
+    /**
+     * TODO: showLoginFailed
+     */
+    @RequestMapping("/user/loginFailed")
+    public String showLoginFailed() {
+        log.info("HomeController.showLoginFailed");
+        return "/user/loginFailed";
+    }
+
+    /**
      * TODO: login
      * loginV1 : @RequestParam("")
      * loginV2 : @RequestParam
